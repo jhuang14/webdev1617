@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            textarea, iframe, button {width:80%; border: solid 2px black;}
+            textarea {font-size: 1em;}
+        </style>
+        
+    </head>
+    <body>
+        <button id="run">Run</button><br>
+        <textarea rows=5 id="html"></textarea>
+        <textarea rows=5  id="css"></textarea>
+        <textarea rows=5  id="javascript"></textarea>
+        <br><iframe id="result"></iframe>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <script>
+            
+            $( 
+                $("#run").click (
+                    function () {
+                       $( "#result" ).contents()
+                        .find( "body" )
+                        .html($("#html").val() );
+                       
+                       $( "#result" ).contents()
+                        .find( "head" )
+                        .append(   
+                            '<style>' + $("#css").val() + '</style>'
+                        ); 
+                        
+
+                        $( "#result" ).contents()
+                        .find( "body" )
+                        .append(   
+                            '<script>' + $("#javascript").val() + '<' + '/script>'
+                        );   
+                        
+                       console.log ( $("#html").val()  ); 
+                    }                  
+                )
+             
+                
+            )
+                
+                
+                
+                
+                
+                console.log ( $("#html").val()  );
+            
+            
+        </script>
+
+    </body>
+</html>
+
+eyJkZWJ1Z19wbGF5ZXIiOmZhbHNlLCJ2ZXJzaW9uIjoiMC4zMTEiLCJyYW5kb21fc2VlZCI6MCwibXVzdGVycyI6MCwiZWZmb3J0Ijo1NDkuNSwibW9uZXkiOjUsImNhbGN1bGF0aW9ucyI6MTA4LjQwMDAwMDAwMDAwMDA5LCJjb2RlIjowLCJ0ZmxvcHMiOjAsInRvdGFsX3RmbG9wcyI6MCwibWF0ZXJpYWxzIjowLCJtYXhfZWZmb3J0IjoxMDAwLCJtYXhfY2FsY3VsYXRpb25zIjoyNTAsIm1heF9jb2RlIjoxMjgsIm5leHRfbWF0aF9sZXZlbCI6NSwibmV4dF9jc19sZXZlbCI6NSwiY2FsY3VsYXRpb25zX211bHRpcGxpZXIiOjEsImNvZGVfbXVsdGlwbGllciI6MSwibWF4X2NvZGVfbXVsdGlwbGllciI6MSwibWF4X2NhbGN1bGF0aW9uc19tdWx0aXBsaWVyIjoxLCJlZmZvcnRfcGVyX3NlY29uZCI6NiwibW9uZXlfcGVyX3NlY29uZCI6MCwiY2FsY3VsYXRpb25zX3Blcl9zZWNvbmQiOjAuMiwiY29kZV9wZXJfc2Vjb25kIjowLCJtYXRlcmlhbHNfcGVyX3NlY29uZCI6MCwiZ3JhZGUiOjgsInNjaG9vbCI6MiwicmVhZGluZ19sZXZlbCI6NSwibWF0aF9sZXZlbCI6NTA0NCwiY3NfbGV2ZWwiOjAsImFydF9sZXZlbCI6NiwicGh5c2ljc19sZXZlbCI6MCwiZW5naW5lZXJpbmdfbGV2ZWwiOjAsInNob3dfbWF0aF9sZXZlbCI6MSwic2hvd19uZXh0X21hdGhfbGV2ZWwiOjAsInNob3dfY3NfbGV2ZWwiOjAsInNob3dfbmV4dF9jc19sZXZlbCI6MCwic2hvd19waHlzaWNzX2xldmVsIjowLCJzaG93X2VuZ2luZWVyaW5nX2xldmVsIjowLCJzaG93X2VmZm9ydCI6MSwic2hvd19tb25leSI6MSwic2hvd19jYWxjdWxhdGlvbnMiOjEsInNob3dfY29kZSI6MCwic2hvd190ZmxvcHMiOjAsInNob3dfbWF0ZXJpYWxzIjowLCJzdXBlcl9wcm9qZWN0X3N0YXJ0ZWQiOjAsIm1hdGhfc3VwZXJfcHJvamVjdF9zdGF0dXMiOjAsImNzX3N1cGVyX3Byb2plY3Rfc3RhdHVzIjowLCJ2YWNhdGlvbnMiOjAsIm1vdGl2YXRpb25zIjowLCJub3RlYm9va3MiOjEsImNoYWxrYm9hcmRzIjowLCJib3VnaHRfYW5zd2VycyI6MiwidGltZXNfdHV0b3JlZCI6MCwiY2FsY3VsYXRvcnMiOjEsImdyYXBoaW5nX2NhbGN1bGF0b3JzIjowLCJjb21wdXRlcnMiOjAsIm1lbW9yaWVzIjowLCJkZXZfdG9vbHMiOjAsImRldmVsb3BlcnMiOjAsImluX2NvbnRlc3QiOmZhbHNlLCJjb250ZXN0X3N0cmVuZ3RoIjowLCJjb250ZXN0X3Byb2dyZXNzIjowLCJjb250ZXN0X3dpbm5pbmdzIjoxMDAsIm1hdGhfcmVzZWFyY2hfcHJvamVjdHNfY291bnQiOjAsIm1hdGhfcmVzZWFyY2hfZmFpbHVyZXMiOjAsIm1hdGhfcmVzZWFyY2hfbW9uZXkiOjAsIm1hdGhfcmVzZWFyY2hfY2FsY3VsYXRpb25fYm9udXMiOjAsIm1hdGhfcmVzZWFyY2hfbW9uZXlfYm9udXMiOjAsIm1hdGhfcmVzZWFyY2hfY29kZV9ib251cyI6MCwibWF0aF9yZXNlYXJjaF9wcm9qZWN0cyI6e30sImNzX3Byb2plY3RzX2NvdW50IjowLCJjc19zdXBlcl9wcm9qZWN0X3N0YWdlIjowLCJjc19uZXVyYWxfbmV0X3Byb2plY3RzIjowLCJjc19sYW5ndWFnZV9wcm9qZWN0cyI6MCwiY3Nfd2Vic2l0ZV9wcm9qZWN0cyI6MCwiY3NfbWF0aF9zb2x2ZXJfcHJvamVjdHMiOjAsImNzX2dhbWVfcHJvamVjdHMiOjAsImNzX2FjdGl2ZV9uZXVyYWxfbmV0cyI6MCwiY3NfYWN0aXZlX2xhbmd1YWdlcyI6MCwiY3NfYWN0aXZlX3dlYnNpdGVzIjowLCJjc19hY3RpdmVfbWF0aF9zb2x2ZXJzIjowLCJjc19hY3RpdmVfZ2FtZXMiOjAsImNzX3Byb2plY3RzIjp7fSwiY3Nfc3VwZXJfcHJvamVjdHMiOnt9LCJzZXJ2ZXJzIjowLCJib3RfbmV0cyI6MCwic3VwZXJfY29tcHV0ZXJzIjowLCJhaV9ub2RlX2Rlc2lnbl9wcm9ncmVzcyI6MCwiYWlfYnVkZHlfZGVzaWduX3Byb2dyZXNzIjowLCJzZWxmX2NvcnJlY3RpbmdfY29kZV9kZXNpZ25fcHJvZ3Jlc3MiOjAsInNlbGZfZWRpdGluZ19jb2RlX2Rlc2lnbl9wcm9ncmVzcyI6MCwiYW5hbGl6ZXJfZGVzaWduX3Byb2dyZXNzIjowLCJjc19hY3RpdmVfYWlfbm9kZXMiOjAsImNzX2FpX2J1ZGR5X2Nob3NlbiI6MCwiY3NfYWN0aXZlX2FpX2J1ZGR5IjowLCJjc19hY3RpdmVfc2VsZl9lZGl0aW5nX2NvZGUiOjAsImNzX2FjdGl2ZV9zZWxmX2NvcnJlY3RpbmdfY29kZSI6MCwiY3NfYWN0aXZlX2NvZGVfYW5hbHl6ZXIiOjAsImVkaXRfbGltaXQiOjAuMiwiZG9uYXRlX2J1dHRvbl9jbGlja3MiOjAsInNlY29uZHNfcGxheWVkIjo5NzcsInBlcm1hbmVudF9ib251c2VzIjp7fSwiYm9udXNlcyI6MCwiY3NfcmVzZXRzIjowLCJtYXRoX3Jlc2V0cyI6MCwiYWxsX3NlY29uZHNfcGxheWVkIjowfQ==
